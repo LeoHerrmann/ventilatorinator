@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" type="text/css" href="static/style.css"/>
+        <link rel="stylesheet" type="text/css" href="static/node_modules/bootstrap/dist/css/bootstrap.css"/>
+        <script src="static/script.js"></script>
+        <title>VENTILATORINATOR</title>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand">Ventilatorinator</span>
+            </div>
+        </nav>
+    
+        
+        <div class="container-lg text-center">
+            <image class="img-fluid" src="https://static.vecteezy.com/system/resources/previews/000/356/035/original/charging-fan-vector-icon.jpg"/>
+            
+            <div>
+                <input class="form-range" type="range"/>
+            </div>
+            
+            <button class="btn btn-primary btn-lg">An / Aus</button>
+        </div>
+    </body>
+</html>
