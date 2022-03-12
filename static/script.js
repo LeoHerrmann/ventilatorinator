@@ -1,0 +1,75 @@
+window.onload = function() {
+    get_state();
+    get_speed();
+};
+
+
+function get_state() {
+    //Get value for fan state and set user input accordingly
+
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function() {
+        var state = this.response;
+
+        console.log("State: " + state);
+
+        if (state == "ON") {
+            document.getElementById("toggle_button").innerText = "Aus";
+        }
+        else if (state == "OFF") {
+            document.getElementById("toggle_button").innerText = "An";
+        }
+    };
+
+    xhttp.open("GET", "/get_state");
+    xhttp.send();
+}
+
+
+function get_speed() {
+    //Get value for fan speed and set user input accordingly
+
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function() {
+        var speed = this.response;
+
+        console.log("Speed: " + speed);
+        document.getElementById("speed_input").value = speed;
+    };
+
+    xhttp.open("GET", "/get_speed");
+    xhttp.send();
+}
+
+
+function toggle() {
+    //toggle fan state using an AJAX-Request
+
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function() {
+        get_state();
+    };
+
+    xhttp.open("GET", "/toggle");
+    xhttp.send();
+}
+
+
+
+function set_speed() {
+    //set fan speed using an AJAX-Request
+
+    var speed = document.getElementById("speed_input").value;
+
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function()  {
+        get_speed();
+    };
+
+    xhttp.open("GET", "/set_speed/" + speed);
+    xhttp.send();
+}

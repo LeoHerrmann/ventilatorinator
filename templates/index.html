@@ -6,6 +6,10 @@
         <link rel="stylesheet" type="text/css" href="static/style.css"/>
         <link rel="stylesheet" type="text/css" href="static/node_modules/bootstrap/dist/css/bootstrap.css"/>
         <script src="static/script.js"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/site.webmanifest">
         <title>VENTILATORINATOR</title>
     </head>
     
@@ -21,10 +25,12 @@
             <image class="img-fluid" src="/static/images/fan.jpg" style="max-height: 60vh;"/>
             
             <div>
-                <input class="form-range" type="range" min="0" max="100"/>
+                <input id="speed_input" class="form-range" type="range" min="0" max="100" onchange="set_speed();"/>
             </div>
             
-            <button class="btn btn-primary btn-lg">An / Aus</button>
+            <div class="d-grid">
+                <button id="toggle_button" class="btn btn-primary btn-lg" onclick="toggle();">An / Aus</button>
+            </div>
         </div>
     </body>
 </html>
