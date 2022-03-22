@@ -1,6 +1,17 @@
+var blades_angle = 0;
+var fan_state = "OFF";
+var fan_speed = 0;
+
 window.onload = function() {
     get_state();
     get_speed();
+
+
+	//Animation for blades
+	setInterval(function() {
+		blades_angle = (blades_angle + fan_speed / 20) % 360;
+		document.getElementById("blades").setAttribute("transform", "rotate(" + blades_angle + ")");
+	}, 1000/60);
 };
 
 
@@ -20,6 +31,8 @@ function get_state() {
         else if (state == "OFF") {
             document.getElementById("toggle_button").innerText = "An";
         }
+
+		fan_state = state;
     };
 
     xhttp.open("GET", "/get_state");
@@ -37,6 +50,7 @@ function get_speed() {
 
         console.log("Speed: " + speed);
         document.getElementById("speed_input").value = speed;
+		fan_speed = speed;
     };
 
     xhttp.open("GET", "/get_speed");

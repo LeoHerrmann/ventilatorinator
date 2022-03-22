@@ -1,6 +1,11 @@
-#TODO
-#Entsprechende Routes Aufrufen, wenn Schalter betätigt werden
-#Irgendwie die Sache mit SCSS hinkriegen
+# TODO
+# Entsprechende Routes Aufrufen, wenn Schalter betätigt werden
+# Irgendwie die Sache mit SCSS hinkriegen
+# index.html aufräumen / aufteilen
+# aktuelle Geschwindigkeit sollte in regelmäßigen Abständen gefetcht werden, nicht nur beim Laden der Anwendung
+# Bilder aufräumen. Welche brauche ich noch?
+# globale Variablen in script.js möglichst vermeiden
+# Animation soll selbstverständlich nur dann aktiv sein, wenn der Ventilator auch an ist
 
 from flask import Flask, render_template
 
