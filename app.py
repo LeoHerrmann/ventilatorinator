@@ -9,7 +9,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-fan_state = "ON"
+fan_state = "OFF"
 fan_speed = 50
 
 
