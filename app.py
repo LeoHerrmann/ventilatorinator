@@ -2,7 +2,7 @@
 # Irgendwie die Sache mit SCSS hinkriegen
 # index.html aufräumen / aufteilen
 # globale Variablen in script.js möglichst vermeiden
-# Animation sollte schneller sein
+
 
 from flask import Flask, render_template
 

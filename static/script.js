@@ -2,6 +2,7 @@ var blades_angle = 0;
 var fan_state = "OFF";
 var fan_speed = 0;
 
+
 window.onload = function() {
 	//Fetch state and speed regularly
 	setInterval(function() {
@@ -77,7 +78,6 @@ function toggle() {
     xhttp.open("GET", "/toggle");
     xhttp.send();
 }
-
 
 
 function set_speed() {
