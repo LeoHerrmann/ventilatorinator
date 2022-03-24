@@ -13,7 +13,7 @@ window.onload = function() {
 			return false;
 		}
 
-		blades_angle = (blades_angle + fan_speed / 20) % 360;
+		blades_angle = (blades_angle + fan_speed / 5) % 360;
 		document.getElementById("blades").setAttribute("transform", "rotate(" + blades_angle + ")");
 	}, 1000/60);
 };
