@@ -9,6 +9,10 @@ window.onload = function() {
 
 	//Animation for blades
 	setInterval(function() {
+		if (fan_state == "OFF") {
+			return false;
+		}
+
 		blades_angle = (blades_angle + fan_speed / 20) % 360;
 		document.getElementById("blades").setAttribute("transform", "rotate(" + blades_angle + ")");
 	}, 1000/60);
