@@ -1,20 +1,16 @@
 # TODO
-# Entsprechende Routes Aufrufen, wenn Schalter betätigt werden
 # Irgendwie die Sache mit SCSS hinkriegen
 # index.html aufräumen / aufteilen
-# aktuelle Geschwindigkeit sollte in regelmäßigen Abständen gefetcht werden, nicht nur beim Laden der Anwendung
-# Bilder aufräumen. Welche brauche ich noch?
 # globale Variablen in script.js möglichst vermeiden
+# Animation sollte schneller sein
 
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
-
 fan_state = "ON"
 fan_speed = 50
-
 
 
 @app.route("/")
@@ -43,7 +39,6 @@ def toggle():
 
     return "New state: " + fan_state
     
-
 
 @app.route("/set_speed/<speed>")
 def set_speed(speed):

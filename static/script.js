@@ -3,8 +3,11 @@ var fan_state = "OFF";
 var fan_speed = 0;
 
 window.onload = function() {
-    get_state();
-    get_speed();
+	//Fetch state and speed regularly
+	setInterval(function() {
+		get_state();
+		get_speed();
+	}, 1000);
 
 
 	//Animation for blades
@@ -63,7 +66,7 @@ function get_speed() {
 
 
 function toggle() {
-    //toggle fan state using an AJAX-Request
+    //Toggle fan state using an AJAX-Request
 
     const xhttp = new XMLHttpRequest();
 
@@ -78,7 +81,7 @@ function toggle() {
 
 
 function set_speed() {
-    //set fan speed using an AJAX-Request
+    //Set fan speed using an AJAX-Request
 
     var speed = document.getElementById("speed_input").value;
 
