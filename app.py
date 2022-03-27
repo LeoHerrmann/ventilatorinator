@@ -1,7 +1,6 @@
 # TODO
 # Irgendwie die Sache mit SCSS hinkriegen
-# index.html aufräumen / aufteilen
-# globale Variablen in script.js möglichst vermeiden
+# Animation: Beschleunigen / Verzögern der Blades anstatt sie direkt auf die Zielgeschwindigkeit zu setzen
 
 
 from flask import Flask, render_template
