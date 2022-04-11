@@ -1,12 +1,17 @@
 # TODO
 # Irgendwie die Sache mit SCSS hinkriegen
 # Animation: Beschleunigen / Verzögern der Blades anstatt sie direkt auf die Zielgeschwindigkeit zu setzen
-
+# Raspberry Pi GPIO-Pins ansteuern
 
 from flask import Flask, render_template
+import RPi.GPIO
 
 app = Flask(__name__)
 
+fan_pin = 17
+GPIO.setmode(BCM)
+GPIO.setup(fan_pin, GPIO.OUT)
+#fan_pwm = GPIO.PWM(fan_pin, 0.5) #Frequenz muss eventuell angepasst werden
 
 fan_state = "OFF"
 fan_speed = 50
@@ -33,8 +38,12 @@ def toggle():
 
     if fan_state == "ON":
         fan_state = "OFF"
+        GPIO.output(fan_pin, GPIO.LOW)
+		# fan_pwm.start(fan_speed) #Wenn wir das benutzen wollen, muss die Zeile darüber auskommentiert werden
     elif fan_state == "OFF":
         fan_state = "ON"
+        GPIO.output(fan_pin, GPIO.HIGH)
+		# fan_pwm.stop() #Wenn wir das benutzen wollen, muss die Zeile darüber auskommentiert werden
 
     return "New state: " + fan_state
     
